@@ -22,7 +22,14 @@
                             <outlet property="delegate" destination="1IL-aE-myX" id="1RP-CS-Pkl"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="Rev-QT-CKX"/>
+                    <navigationItem key="navigationItem" id="Rev-QT-CKX">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="2ZO-dy-WDF">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="addButtonPressed:" destination="1IL-aE-myX" id="qeP-f1-Y1R"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qb0-R9-2BG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
