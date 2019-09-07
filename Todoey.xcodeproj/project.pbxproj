@@ -60,6 +60,7 @@
 		81C356062322756C000C0D9E /* Todoey */ = {
 			isa = PBXGroup;
 			children = (
+				81F49B422322A95E00161F73 /* TableCell */,
 				81C356072322756C000C0D9E /* AppDelegate.swift */,
 				81C3560B2322756C000C0D9E /* Main.storyboard */,
 				81C356132322756D000C0D9E /* LaunchScreen.storyboard */,
@@ -67,7 +68,6 @@
 				81C356162322756D000C0D9E /* Info.plist */,
 				81C356112322756D000C0D9E /* Assets.xcassets */,
 				81C3560E2322756C000C0D9E /* Todoey.xcdatamodeld */,
-				81F49B422322A95E00161F73 /* TableCell */,
 			);
 			path = Todoey;
 			sourceTree = "<group>";

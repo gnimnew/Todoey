@@ -10,7 +10,9 @@ import UIKit
 
 class TodoListViewController: UITableViewController {
 
-    var itemArray = ["Find Mike", "Buy Eggs", "Destory Dmogorgon"]
+    var itemArray = Array<String>()
+    
+    let defaults = UserDefaults.standard
     
     @IBAction func addButtonPressed(_ sender: UIBarButtonItem) {
         
@@ -20,6 +22,9 @@ class TodoListViewController: UITableViewController {
         
         let action = UIAlertAction(title: "Add Item", style: .default) { _ in
             self.itemArray.append(item.text!)
+            
+            self.defaults.setValue(self.itemArray, forKey: "TodoListArray")
+            
             self.tableView.reloadData()
         }
         alert.addTextField { (alertTextFiled) in
@@ -34,9 +39,14 @@ class TodoListViewController: UITableViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         self.tableView.register(ListItemTableViewCell.self, forCellReuseIdentifier: "listItemCell")
+        
+        if let bug = defaults.array(forKey: "TodoListArray") as? [String] {
+            itemArray = bug
+        }
+        
     }
     
-    //MARK  -   Tableview Datasource Methods
+    //MARK: Tableview Datasource Methods
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -53,7 +63,7 @@ class TodoListViewController: UITableViewController {
         return cell
     }
     
-    //MARK - TableView Delegate Methods
+    //MARK: TableView Delegate Methods
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
